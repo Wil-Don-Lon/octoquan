@@ -33,7 +33,7 @@ from PIL import Image, ImageDraw, ImageFont
 DESTINATION_URL  = "https://stubs.net/event/7868/locals-on-blast-showcase"
 
 # Paste your deployed Apps Script URL here (see SETUP.md)
-APPS_SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbxZsK-fzpXglJp4fCBXXIn6qp2IwBLksJQYhuU6-6koDN2yTp-4398TXAMyiq2-dczg/exec"
+APPS_SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbz0TWrt_PKxtpxDo-dMnLPkjTL57KJQNmSwufJYxC--gu60Kzn4W7JeyIMmWYGf_nDU/exec"
 
 OUTPUT_DIR       = Path("qr_output")
 
@@ -103,8 +103,7 @@ VARIANTS = build_variants()
 # ─────────────────────────────────────────────
 
 def tracking_url(variant_id: str) -> str:
-    """Each QR points directly at the Apps Script with variant as a query param."""
-    return f"{APPS_SCRIPT_URL}?variant={variant_id}"
+    return f"https://octoquan.com/scan/{variant_id}"
 
 
 def make_qr(variant: dict, destination: str) -> Image.Image:
