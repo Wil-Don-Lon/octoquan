@@ -9,8 +9,12 @@ export async function GET(
 ) {
   const { variant } = await params
 
-  fetch(`${APPS_SCRIPT_URL}?variant=${variant}`)
-    .catch(() => {})
+  // Wait for the log to complete before redirecting
+  try {
+    await fetch(`${APPS_SCRIPT_URL}?variant=${variant}`)
+  } catch {
+    // still redirect even if logging fails
+  }
 
   return NextResponse.redirect(DESTINATION_URL, { status: 302 })
 }
