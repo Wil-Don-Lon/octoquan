@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shows — Octoquan Records</title>
+<link rel="icon" type="image/png" href="/assets/images/logos/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Unbounded:wght@400;600;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/octoquan.css" />
+</head>
+<body>
+<!-- ── HERO ── -->
+<div class="shows-hero">
+  <h1 class="shows-hero-title">upcoming<br><em>shows.</em></h1>
+  <p class="shows-hero-meta" id="shows-hero-meta">Loading…</p>
+  <a class="btn-secondary" href="https://forms.gle/V1fwxvov2SYMhsjk8" target="_blank" rel="noopener" style="margin-top:28px;display:inline-block;">Got an upcoming show? Get it posted!</a>
+</div>
+<!-- ── SHOW LIST ── -->
+<div class="shows-section">
+<div class="shows-inner">
+<p class="section-label">On the Calendar</p>
+<div id="show-list-wrap">
+<p class="shows-empty">Loading…</p>
+</div>
+</div>
+</div>
+<script src="/js/octoquan-db.js"></script>
+<script src="/js/octoquan-ui.js"></script>
+<script>
+OctoquanUI.injectShell('shows');
+OctoquanDB.getUpcomingShows().then(shows => {
+const meta = document.getElementById('shows-hero-meta');
+const wrap = document.getElementById('show-list-wrap');
+if (shows.length === 0) {
+meta.textContent = 'No upcoming shows · Octoquan Records';
+wrap.innerHTML = '<p class="shows-empty">Nothing on the calendar right now. Check back soon.</p>';
+return;
+      }
+meta.textContent = `${shows.length} upcoming show${shows.length !== 1 ? 's' : ''} · Octoquan Records`;
+const rows = shows.map(show => {
+const d = new Date(show.date + 'T00:00:00');
+const day = d.toLocaleDateString('en-US', { weekday: 'long' });
+const dateFormatted = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+const artistList = show.artists && show.artists.length
+          ? show.artists.join(' · ').toUpperCase()
+          : '';
+const ticketBtn = show.ticketLink
+          ? `<a class="btn-primary" href="${show.ticketLink}" target="_blank" rel="noopener">More Info!</a>`
+          : `<span style="font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);"> </span>`;
+return `
+          <div class="show-row">
+            <div class="show-date">
+              <span class="show-date-day">${day}</span>
+              <span class="show-date-main">${dateFormatted}</span>
+            </div>
+            <div class="show-info">
+              <p class="show-venue">${show.venue}</p>
+              <p class="show-location">${show.city}, ${show.state}</p>
+${artistList ? `<p class="show-artists">${artistList}</p>` : ''}
+${show.description ? `<p class="show-desc">${show.description}</p>` : ''}
+            </div>
+            <div class="show-actions">
+${ticketBtn}
+            </div>
+          </div>`;
+      }).join('');
+wrap.innerHTML = `<div class="show-list">${rows}</div>`;
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Octoquan Records</title>
+  <link rel="icon" type="image/png" href="/assets/images/logos/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Unbounded:wght@400;600;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/css/octoquan.css" />
+  <style>
+    .page-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ── HERO ── */
+    .about-hero {
+      padding: 100px 20px 80px;
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    .about-hero-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .about-hero-heading {
+      font-family: var(--display);
+      font-size: clamp(52px, 8vw, 100px);
+      font-weight: 900;
+      letter-spacing: -3px;
+      line-height: .9;
+      opacity: 0;
+      animation: fadeUp .9s ease forwards .1s;
+    }
+
+    .about-hero-heading em {
+      font-style: normal;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, .9);
+      color: transparent;
+    }
+
+    .about-hero-img {
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .about-body {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      padding-top: 12px;
+    }
+
+    .about-body p {
+      font-size: 17px;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .about-body p strong {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .about-body p em {
+      color: rgba(255, 255, 255, .4);
+      font-style: normal;
+    }
+
+    /* ── QUOTE ── */
+    .quote-section {
+      border-bottom: 1px solid var(--stroke);
+      padding: 100px 20px;
+    }
+
+    .quote-block {
+      border-left: 1px solid rgba(255, 255, 255, .25);
+      padding: 8px 0 8px 48px;
+      margin-top: 48px;
+      max-width: 820px;
+    }
+
+    .quote-text {
+      font-family: var(--display);
+      font-size: clamp(17px, 2.2vw, 24px);
+      font-weight: 400;
+      line-height: 1.65;
+      letter-spacing: -.2px;
+      color: var(--fg);
+      margin-bottom: 32px;
+    }
+
+    .quote-text em {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .quote-attribution {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── PHILOSOPHY ── */
+    .philosophy-section {
+      border-bottom: 1px solid var(--stroke);
+      padding: 100px 20px;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid var(--stroke);
+      margin-top: 48px;
+    }
+
+    .philosophy-card {
+      padding: 48px 40px;
+      border-right: 1px solid var(--stroke);
+    }
+
+    .philosophy-card:last-child {
+      border-right: none;
+    }
+
+    .philosophy-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: rgba(255, 255, 255, .2);
+      margin-bottom: 24px;
+    }
+
+    .philosophy-title {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -.4px;
+      margin-bottom: 16px;
+    }
+
+    .philosophy-desc {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-section {
+      border-bottom: 1px solid var(--stroke);
+      padding: 100px 20px;
+    }
+
+    .how-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .how-heading {
+      font-family: var(--display);
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: .95;
+    }
+
+    .how-step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 28px;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--stroke);
+      align-items: start;
+    }
+
+    .how-step:last-child {
+      border-bottom: none;
+    }
+
+    .how-step-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, .25);
+      padding-top: 4px;
+    }
+
+    .how-step-content h3 {
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -.3px;
+      margin-bottom: 12px;
+    }
+
+    .how-step-content p {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .how-step-content p strong {
+      color: #fff;
+      font-weight: 500;
+    }
+
+
+    /* ── TIMELINE ── */
+    .timeline-section {
+      border-bottom: 1px solid var(--stroke);
+      padding: 100px 20px;
+    }
+
+    .timeline {
+      margin-top: 48px;
+      border: 1px solid var(--stroke);
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 48px;
+      padding: 36px 40px;
+      border-bottom: 1px solid var(--stroke);
+      align-items: start;
+      transition: background .2s;
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-item:hover {
+      background: rgba(255, 255, 255, .03);
+    }
+
+    .timeline-date {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: 3px;
+    }
+
+    .timeline-content h3 {
+      font-family: var(--display);
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -.2px;
+      margin-bottom: 8px;
+    }
+
+    .timeline-content p {
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .timeline-item.future .timeline-date,
+    .timeline-item.future .timeline-content h3,
+    .timeline-item.future .timeline-content p {
+      color: rgba(255, 255, 255, .2);
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      border-bottom: 1px solid var(--stroke);
+      padding: 100px 20px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid var(--stroke);
+      margin-top: 48px;
+    }
+
+    .contact-card {
+      padding: 48px 40px;
+      border-right: 1px solid var(--stroke);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contact-card:last-child {
+      border-right: none;
+    }
+
+    .contact-card-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .contact-card-title {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -.3px;
+    }
+
+    .contact-card-desc {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    .contact-card-link {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--fg);
+      border-bottom: 1px solid var(--stroke);
+      padding-bottom: 2px;
+      display: inline-block;
+      transition: border-color .15s;
+    }
+
+    .contact-card-link:hover {
+      border-color: #fff;
+    }
+
+    /* ── CTA ── */
+    .about-cta {
+      padding: 120px 20px;
+      text-align: center;
+    }
+
+    .about-cta-title {
+      font-family: var(--display);
+      font-size: clamp(36px, 6vw, 80px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .about-cta-sub {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .about-cta-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+
+      .about-hero-inner,
+      .how-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .philosophy-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .philosophy-card,
+      .contact-card {
+        border-right: none;
+        border-bottom: 1px solid var(--stroke);
+      }
+
+      .philosophy-card:last-child,
+      .contact-card:last-child {
+        border-bottom: none;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .quote-block {
+        padding-left: 24px;
+      }
+
+      .about-hero-img {
+        width: 160px;
+        height: 160px;
+      }
+
+      .photo-break img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── FOUNDER STORY ── -->
+  <div class="about-hero">
+    <div class="about-hero-inner">
+      <div class="about-hero-left">
+        <h1 class="about-hero-heading">the<br>full<br><em>story.</em></h1>
+        <img class="about-hero-img" src="/assets/images/logos/tysm.png" alt="" aria-hidden="true" />
+      </div>
+      <div class="about-body">
+        <p>
+          Much like the rolling hills of the Ozarks, the NWA music scene has its highs and lows.
+          Sometimes we output <strong>magnificent music that astonishes the world</strong> — other
+          times, we sit stagnant in poser city while the DIY venues struggle to scrape together enough pennies to
+          compete
+          with the Walmartian Bagillionaires.
+        </p>
+        <p>
+          As a fourth-generation resident Arkansan, <strong>William Lonon</strong> decided he wanted
+          to do something about the lack of unified connective tissue surrounding the local culture.
+          The scene had the talent. It had the energy. What it lacked was
+          infrastructure — a unified hub that connects artists together, and a label that actually gave a damn about the
+          artists it worked with,
+          understood the culture it came from, and wasn't trying to sand down the rough edges
+          to make something more palatable for an algorithm.
+        </p>
+        <p>
+          Therefore, with the help of his trusty dusty compooter, dozens of cans of Monster
+          energy (not sponsored), a couple subscriptions to your favorite LLMs, and a
+          $20,000 spare-change <strong>(student debt)</strong> investment into a music industry data science degree, he
+          put his ass to work.
+        </p>
+        <p>
+          <strong>Octoquan Records</strong> launched in 2026 — an independent label built to give
+          weird music a home, Arkansas artists a platform, and the underground a little more
+          connective tissue. No major label money. No gatekeepers. No playlist algorithms running
+          the show <em>(well, maybe a few)</em>. Just good music pushed hard into the world
+          through whatever means necessary.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOUNDER QUOTE ── -->
+  <div class="quote-section">
+    <div class="page-inner">
+      <p class="section-label">From the founder</p>
+      <div class="quote-block">
+        <p class="quote-text">
+          "Octoquan is the culmination of many hard nights full of procrastination, angst, passion,
+          Eureka Pizza <em>(regrettably)</em>, and sheer expression of free will. If you are so
+          inclined as to hop on the wagon, send your demos to my submission inbox, where I will
+          put them on and consider them for inclusion into my domain of funky tunes. If you are
+          brave, and your music is funky, you just may be the newest addition to the ever-growing
+          roster of funky tunes creators."
+        </p>
+        <p class="quote-attribution">— William Lonon, Founder · Octoquan Records</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PHILOSOPHY ── -->
+  <div class="philosophy-section">
+    <div class="page-inner">
+      <p class="section-label">What we stand for</p>
+      <div class="philosophy-grid">
+        <div class="philosophy-card">
+          <p class="philosophy-num">01</p>
+          <h2 class="philosophy-title">Artist Ownership</h2>
+          <p class="philosophy-desc">
+            You own your masters. Full stop. We are a platform, not a landlord.
+            Every deal we make puts the artist in control of their work, their image,
+            and their future. The music belongs to the person who made it — always.
+          </p>
+        </div>
+        <div class="philosophy-card">
+          <p class="philosophy-num">02</p>
+          <h2 class="philosophy-title">Unapologetically Weird</h2>
+          <p class="philosophy-desc">
+            Genre requirements: none. If it's honest, if it's got something to say,
+            if it makes someone feel something — we want to hear it. The weirder
+            the better. We exist for the music that doesn't fit anywhere else.
+          </p>
+        </div>
+        <div class="philosophy-card">
+          <p class="philosophy-num">03</p>
+          <h2 class="philosophy-title">Rooted in Arkansas</h2>
+          <p class="philosophy-desc">
+            Built in the Ozarks, operating everywhere. We exist to strengthen
+            the connective tissue of the NWA grassroots scene and push its
+            music out into a world that hasn't heard it yet.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── HOW IT WORKS ── -->
+  <div class="how-section">
+    <div class="how-inner">
+      <div style="display:flex; flex-direction:column; gap:28px;">
+        <h2 class="how-heading">how<br>it<br>works.</h2>
+        <img src="/assets/images/logos/confusion.png" alt="Octoquan Records" style="width:240px; border-radius:8px;" />
+      </div>
+      <div>
+        <div class="how-step">
+          <p class="how-step-num">01</p>
+          <div class="how-step-content">
+            <h3>Submit Your Demo</h3>
+            <p>
+              Send us your music through the demo submission form. No industry connections
+              required, no genre gatekeeping. If it's real, we want to hear it. We listen
+              to everything that comes in.
+            </p>
+          </div>
+        </div>
+        <div class="how-step">
+          <p class="how-step-num">02</p>
+          <div class="how-step-content">
+            <h3>We'll Be in Touch</h3>
+            <p>
+              If your music is a fit, William will reach out directly. No form letters,
+              no intermediaries. Just a real conversation about what you're making and
+              what working together could look like.
+            </p>
+          </div>
+        </div>
+        <div class="how-step">
+          <p class="how-step-num">03</p>
+          <div class="how-step-content">
+            <h3>You Keep Your Masters</h3>
+            <p>
+              <strong>This is non-negotiable.</strong> Every artist on the Octoquan roster
+              owns their recordings outright. We help with distribution, promotion, and
+              getting your music in front of people — we don't take your work in exchange.
+            </p>
+          </div>
+        </div>
+        <div class="how-step">
+          <p class="how-step-num">04</p>
+          <div class="how-step-content">
+            <h3>Get It Out There</h3>
+            <p>
+              Once you're on the roster, your music goes everywhere — all major streaming
+              platforms, physical distribution where it makes sense, and whatever scrappy
+              DIY promotion we can throw at it. Arkansas and beyond.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- ── CONTACT ── -->
+  <div class="contact-section">
+    <div class="page-inner">
+      <p class="section-label">Get in touch</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <p class="contact-card-label">Demo Submissions</p>
+          <h3 class="contact-card-title">Send Your Music</h3>
+          <p class="contact-card-desc">
+            Got something funky? Use the demo submission form. We listen to
+            everything. No genre requirements, no industry connections needed.
+          </p>
+          <a class="btn-primary" href="https://forms.gle/iCZnsLzhUg596hiT8" target="_blank" rel="noopener">Submit a
+            Demo</a>
+        </div>
+        <div class="contact-card">
+          <p class="contact-card-label">Press & Media</p>
+          <h3 class="contact-card-title">Press Inquiries</h3>
+          <p class="contact-card-desc">
+            Journalists, bloggers, podcasters — if you want to cover the label
+            or any of our artists, reach out by email and we'll get back to you.
+          </p>
+          <a class="contact-card-link" href="mailto:press@octoquan.com">press@octoquan.com</a>
+        </div>
+        <div class="contact-card">
+          <p class="contact-card-label">General</p>
+          <h3 class="contact-card-title">Everything Else</h3>
+          <p class="contact-card-desc">
+            Booking, licensing, collabs, or just want to say what's up —
+            drop us a line at the general inbox and we'll figure it out.
+          </p>
+          <a class="contact-card-link" href="mailto:info@octoquan.com">info@octoquan.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CTA ── -->
+  <div class="about-cta">
+    <h2 class="about-cta-title">make<br>music?</h2>
+    <p class="about-cta-sub">
+      We're always listening. No genre requirements, no industry connections needed.
+      Just something real. Send it over.
+    </p>
+    <div class="about-cta-btns">
+      <a class="btn-primary" href="https://forms.gle/iCZnsLzhUg596hiT8" target="_blank" rel="noopener">Submit a Demo</a>
+      <a class="btn-secondary" href="/artists">See the Roster</a>
+    </div>
+  </div>
+
+  <script src="/js/octoquan-db.js"></script>
+  <script src="/js/octoquan-ui.js"></script>
+  <script>
+    OctoquanUI.injectShell('about');
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "nextArtistId": 4,
+    "nextReleaseId": 3,
+    "featuredReleaseId": 2
+  },
+  "artists": [
+    {
+      "artistId": 1,
+      "slug": "yiyam",
+      "number": "001",
+      "name": "Yiyam",
+      "status": "active",
+      "photo": "/assets/images/artists/yiyam/yiyam.png",
+      "genres": [
+        "Egg Punk",
+        "Garage Psych",
+        "Avant-Garde",
+        "Country Bumpkin",
+        "Funque Metal"
+      ],
+      "bio": "Yiyam is the solo project of J. Jilenquan, a self-taught multi-instrumentalist and producer from the Northwest Arkansas Bay Area. With a DIY ethos and a penchant for genre-hopping, Yiyam's music is a chaotic blend of punk energy, psychedelic experimentation, and heartfelt vulnerability.",
+      "riyl": [
+        "Osees",
+        "Ween",
+        "Viagra Boys",
+        "Ty Segall",
+        "King Gizzard",
+        "Black Keys"
+      ],
+      "links": {
+        "spotify": "https://open.spotify.com/artist/5ci9iRUddZEi9c7ApZ2Z6h",
+        "apple": "https://music.apple.com/us/artist/yiyam/1790283602",
+        "amazon": "https://music.amazon.com/artists/B0DSY5ND2N/yiyam",
+        "pandora": "https://www.pandora.com/artist/yiyam/ARPkdjbqPqktltk",
+        "youtube": "https://www.youtube.com/@j.jilenquan",
+        "soundcloud": "https://on.soundcloud.com/IwsYL0omwG4rtKWgAp",
+        "bandcamp": null,
+        "instagram": null
+      },
+      "releases": [
+        {
+          "releaseId": 1,
+          "slug": "cognitive-dissonance",
+          "title": "Cognitive Dissonance",
+          "type": "LP",
+          "year": "2025",
+          "releaseDate": "2025-01-01",
+          "art": "/assets/images/artists/yiyam/cognitive-dissonance.png",
+          "desc": "Cognitive Dissonance is an introspective memoir that takes the listener through the experiences and internal monologues of a time cast in equal parts love and fear. The entirety of the record stands as a chronological summary of his romantic feelings as they were horribly transmogrified by unprocessed psychosexual trauma, cosmic wave anomalies, and an ambiguous source of existential dread and impending doom. 10/10 - IGN",
+          "tracklist": [
+            "Freaking Me Out!",
+            "Insufferable Touchscreen",
+            "Funny Human",
+            "Feral Creature (Hotdog Reacher)",
+            "Obtuse Lovage",
+            "Cognitive Dissonance",
+            "Duckies",
+            "Nightmare Bringer",
+            "Wall of Stupid",
+            "Serenity",
+            "Freedom",
+            "Parentheses",
+            "Goddess Saraswati",
+            "Lodgedog",
+            "Goose Apocalypse",
+            "Greek Salad",
+            "Need No Woman",
+            "DumFuk"
+          ],
+          "streaming": {
+            "spotify": "https://open.spotify.com/album/1EFwqSBdp0Zh1MWT6ONdvy",
+            "apple": "https://music.apple.com/us/album/cognitive-dissonance/1790284773",
+            "amazon": "https://music.amazon.com/albums/B0DSXYNW4T",
+            "pandora": "https://www.pandora.com/artist/yiyam/cognitive-dissonance/AL4qbb5Vhx9q9kq",
+            "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_lerf4RHl3brtxz2w9Bjt2mP4UgV_X0iPM",
+            "soundcloud": null,
+            "bandcamp": null,
+            "tidal": null
+          }
+        },
+        {
+          "releaseId": 2,
+          "slug": "concentrated-octoquan",
+          "title": "Concentrated Octoquan",
+          "type": "LP",
+          "year": "2026",
+          "releaseDate": "2026-08-11",
+          "art": "/assets/images/artists/yiyam/concentrated-octoquan.png",
+          "desc": "This is the second release by the prolifically weird singer-songwriter-producer-ceo-sex haver Yiyam, better known by his stage name J. Jilenquan. He has done it again, turning his silly little thoughts and feelings into sonic soundscapes, tapestries of emotion into soiled rags of impulsive reactivity. He leverages the raw feelings of the human experience, from all corners of fear, love, disgust, joy, disappointment, pride, and self-deprecation. For your listening pleasure, enjoy.",
+          "tracklist": [
+            "Homework With U"
+          ],
+          "streaming": {
+            "spotify": null,
+            "apple": null,
+            "amazon": null,
+            "pandora": null,
+            "youtube": null,
+            "soundcloud": null,
+            "bandcamp": null,
+            "tidal": null
+          }
+        }
+      ]
+    },
+    {
+      "artistId": 2,
+      "slug": "lonon-underground",
+      "number": "002",
+      "name": "Lonon Underground",
+      "status": "active",
+      "photo": "/assets/images/artists/lonon-underground/boombalacaca.png",
+      "genres": [
+        "techno",
+        "house",
+        "freekstyle",
+        "frogwave",
+        "post punk",
+        "avant-garde",
+        "dadbodbeat"
+      ],
+      "bio": "Lonon Underground is the precipice of the low-key, lo-fi, and low-effort production philosophy poineered by artists such as Ween, Beck, and Daniel Johnston. Founded by Big D. Lenoir, a 7-time divorce-nominated pothead and his teenage burnout son Slick Willie during the COVID-19 plandemic, Lonon Underground began producing alien soundscapes, ranging in quality from Freekstyle Chicken Haus to Bogart Techno to Stoner Nightmare Acid Puke Rock, simply out of a surplus of boredom and Spanish Eddie. Fun Fact: 100% of their music was made under the influence of a proprietary hallucinagenic substance produced in MAKR laboratories, which is rumored to have been concocted solely out of expired printer ink and wallpaper paste. This is perhaps the pinnacle representation of what it means to be stupid. Lonon Underground is what it sounds like to be a divorced father of an autistic teenage psychonaut. Listner disgression is advised.",
+      "riyl": [
+        "Paranoid London",
+        "Ween",
+        "Yiyam",
+        "Velvet Underground",
+        "Black Lips",
+        "Pot"
+      ],
+      "links": {
+        "spotify": null,
+        "apple": null,
+        "amazon": null,
+        "pandora": null,
+        "youtube": "https://www.youtube.com/@lononunderground8026",
+        "soundcloud": null,
+        "bandcamp": null,
+        "instagram": null
+      },
+      "releases": []
+    },
+    {
+      "artistId": 3,
+      "slug": "snowday",
+      "number": "003",
+      "name": "Snowday",
+      "status": "active",
+      "photo": "/assets/images/artists/snowday/photo.png",
+      "genres": [
+        "idk",
+        "what"
+      ],
+      "bio": "huh?",
+      "riyl": [
+        "title fight"
+      ],
+      "links": {
+        "spotify": null,
+        "apple": null,
+        "amazon": null,
+        "pandora": null,
+        "youtube": null,
+        "soundcloud": null,
+        "bandcamp": null,
+        "instagram": null
+      },
+      "releases": []
+    }
+  ]
+}

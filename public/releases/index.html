@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Releases — Octoquan Records</title>
+  <link rel="icon" type="image/png" href="/assets/images/logos/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Unbounded:wght@400;600;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/octoquan.css" />
+</head>
+<body>
+
+  <!-- ── HERO ── -->
+  <div class="releases-hero">
+    <h1 class="releases-hero-title">all<br><em>releases.</em></h1>
+    <p class="releases-hero-meta" id="releases-hero-meta">Loading…</p>
+  </div>
+
+  <!-- ── GRID ── -->
+  <div class="releases-grid-section">
+    <div class="releases-grid-inner">
+      <p class="section-label">Catalog</p>
+      <div class="releases-grid" id="releases-grid">
+        <p class="releases-empty">Loading…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/octoquan-db.js"></script>
+  <script src="/js/octoquan-ui.js"></script>
+  <script>
+    OctoquanUI.injectShell('releases');
+
+    function buildTile(artist, release) {
+      const badge     = OctoquanUI.upcomingBadge(release);
+      const countdown = OctoquanUI.countdownTimer(release);
+      const dateLine  = OctoquanUI.releaseDateLine(release);
+      const artEl = release.art
+        ? `<img class="release-tile-art" src="${release.art}" alt="${release.title}" />`
+        : `<div class="release-tile-art-placeholder">●</div>`;
+
+      return `
+        <a class="release-tile" href="/artists/${artist.slug}/${release.slug}">
+          ${artEl}
+          <div class="release-tile-badges">
+            ${badge}
+            <span class="release-tile-artist">${artist.name}</span>
+          </div>
+          <p class="release-tile-title">${release.title}</p>
+          <div class="release-tile-meta">
+            <span>${release.type}</span>
+            <span>·</span>
+            <span>${release.year}</span>
+          </div>
+          ${dateLine}
+          ${countdown}
+          <span class="release-tile-arrow">↗</span>
+        </a>`;
+    }
+
+    OctoquanDB.getAllReleases('all').then(all => {
+      // Upcoming first (soonest at top), then released newest to oldest
+      const upcoming = all
+        .filter(({ release }) => !OctoquanDB.isReleased(release))
+        .sort((a, b) => new Date(a.release.releaseDate) - new Date(b.release.releaseDate));
+
+      const released = all
+        .filter(({ release }) => OctoquanDB.isReleased(release))
+        .sort((a, b) => new Date(b.release.releaseDate) - new Date(a.release.releaseDate));
+
+      const sorted = [...upcoming, ...released];
+
+      document.getElementById('releases-hero-meta').textContent =
+        `${sorted.length} release${sorted.length !== 1 ? 's' : ''} · Octoquan Records`;
+
+      const grid = document.getElementById('releases-grid');
+      grid.innerHTML = sorted.length > 0
+        ? sorted.map(({ artist, release }) => buildTile(artist, release)).join('')
+        : '<p class="releases-empty">No releases yet.</p>';
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗
+       ║         OCTOQUAN RECORDS — RELEASE PAGE TEMPLATE            ║
+       ║                                                              ║
+       ║  HOW TO USE:                                                 ║
+       ║  1. Copy to /artists/[artist-slug]/[release-slug]/index.html ║
+       ║  2. Update <title> tag below                                 ║
+       ║  3. Optionally override desc in PAGE_CONFIG                  ║
+       ║  4. All other data comes from /_data/artists.json            ║
+       ╚══════════════════════════════════════════════════════════════╝ -->
+
+  <script>
+  /* ================================================================
+     PAGE CONFIG — all fields optional, null = use JSON value
+     ================================================================ */
+  const PAGE_CONFIG = {
+    // Write a richer description here, or leave null
+    desc: null,
+  };
+  /* ================================================================
+     END CONFIG
+     ================================================================ */
+  </script>
+
+  <title>Concentrated Octoquan — Yiyam — Octoquan Records</title><!-- EDIT -->
+  <link rel="icon" type="image/png" href="/assets/images/logos/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Unbounded:wght@400;600;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/octoquan.css" />
+</head>
+<body>
+
+  <div id="release-hero"></div>
+  <div id="tracklist-section"></div>
+
+  <script src="/js/octoquan-db.js"></script>
+  <script src="/js/octoquan-ui.js"></script>
+  <script src="/js/render-release-page.js"></script>
+  <script>
+    OctoquanUI.injectShell('releases');
+    renderReleasePage(PAGE_CONFIG);
+  </script>
+</body>
+</html>

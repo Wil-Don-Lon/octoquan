@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artists — Octoquan Records</title>
+  <link rel="icon" type="image/png" href="/assets/images/logos/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Unbounded:wght@400;600;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/octoquan.css" />
+  <style>
+    .artists-hero { max-width: 1140px; margin: 0 auto; padding: 80px 20px 60px; }
+    .artists-hero-title { font-family: var(--display); font-size: clamp(48px, 8vw, 100px); font-weight: 900; text-transform: lowercase; letter-spacing: -2px; line-height: .95; margin-bottom: 24px; opacity: 0; animation: fadeUp .9s ease forwards .1s; }
+    .artists-hero-sub { font-family: var(--mono); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
+    .artists-grid-section { border-top: 1px solid var(--stroke); padding: 0 20px 100px; }
+    .artists-grid-wrap { max-width: 1140px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+
+  <div class="artists-hero">
+    <h1 class="artists-hero-title">our<br>artists.</h1>
+    <p class="artists-hero-sub" id="artist-count">loading...</p>
+  </div>
+
+  <div class="artists-grid-section">
+    <div class="artists-grid-wrap">
+      <div class="artists-grid" id="artists-grid"></div>
+    </div>
+  </div>
+
+  <script src="/js/octoquan-db.js"></script>
+  <script src="/js/octoquan-ui.js"></script>
+  <script src="/js/render-artist-grid.js"></script>
+  <script>
+    OctoquanUI.injectShell('artists');
+    renderArtistGrid('artists-grid', { showPlaceholders: false }).then(async () => {
+      const artists = await OctoquanDB.getAllArtists();
+      const active = artists.filter(a => a.status === 'active');
+      document.getElementById('artist-count').textContent =
+        `${active.length} Artist${active.length !== 1 ? 's' : ''} · Octoquan Records`;
+    });
+  </script>
+</body>
+</html>

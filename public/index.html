@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Octoquan Records</title>
+  <link rel="icon" type="image/png" href="/assets/images/logos/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Unbounded:wght@400;600;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/css/octoquan.css" />
+</head>
+
+<body>
+
+  <!-- ── HERO ── -->
+  <section style="padding: 0;">
+    <div class="hero">
+      <p class="hero-eyebrow">Independent · Underground · Uncompromising</p>
+      <h1 class="hero-title">
+        weird<br>
+        music<br>
+        <em>done right.</em>
+      </h1>
+      <p class="hero-sub">
+        Octoquan Records is an independent label built by a music hacker in Arkansas.
+        No gatekeepers, no algorithms, just artists making exactly what they want.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="/releases">Latest Releases</a>
+        <a class="btn-secondary" href="/artists">Our Artists</a>
+        <a class="btn-secondary" href="https://forms.gle/iCZnsLzhUg596hiT8" target="_blank" rel="noopener">Submit a
+          Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURED RELEASE ── -->
+  <section class="featured">
+    <div class="section-inner">
+      <p class="section-label">Featured Release</p>
+      <div class="release-card" id="featured-release">
+        <div class="release-art">
+          <div class="release-art-placeholder">●</div>
+        </div>
+        <div class="release-info">
+          <p class="release-artist" style="color:var(--muted)">Loading…</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ARTISTS ── -->
+  <section class="artists-section">
+    <div class="section-inner">
+      <p class="section-label">Roster</p>
+      <div class="artists-grid" id="roster-grid"></div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="about-strip">
+    <div class="about-inner">
+      <h2 class="about-heading">what<br>we<br>are.</h2>
+      <div class="about-body">
+        <p>
+          <strong>Octoquan Records</strong> is a DIY independent label built from the ground up
+          by a music hacker who got tired of waiting for the industry to catch up.
+          Based in Arkansas. Operating everywhere.
+        </p>
+        <p>
+          We sign artists who make music that resists conformity —
+          the weird stuff, the loud stuff, the tender stuff, the stuff that comforts the disturbed
+          and disturbs the comfortable. We believe in <strong>owning your masters</strong>,
+          keeping it underground, and letting the music do the talking.
+        </p>
+        <p>
+          No major label money. No playlisting algorithms (well, maybe a few).
+          Just good music pushed hard into the world through whatever means necessary.
+        </p>
+        <div class="about-stats">
+          <div class="stat">
+            <p class="stat-num" id="artist-count">...</p>
+            <p class="stat-label">Artists</p>
+          </div>
+          <div class="stat">
+            <p class="stat-num">∞</p>
+            <p class="stat-label">Genres</p>
+          </div>
+          <div class="stat">
+            <p class="stat-num">DIY</p>
+            <p class="stat-label">Forever</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DEMO CTA ── -->
+  <section class="demo-cta">
+    <h2 class="demo-cta-title">make<br>music?</h2>
+    <p class="demo-cta-sub">
+      We're always listening. Send us your demos — no genre requirements,
+      no industry connections needed. Just something real.
+    </p>
+    <a class="btn-primary" href="https://forms.gle/iCZnsLzhUg596hiT8" target="_blank" rel="noopener">Submit a Demo</a>
+  </section>
+
+  <script src="/js/octoquan-db.js"></script>
+  <script src="/js/octoquan-ui.js"></script>
+  <script src="/js/render-artist-grid.js"></script>
+  <script>
+    OctoquanUI.injectShell('');
+
+    // ── Featured Release ──────────────────────────────────────────
+    OctoquanDB.getFeaturedRelease().then(result => {
+      const el = document.getElementById('featured-release');
+      if (!result) {
+        el.innerHTML = '<p style="color:var(--muted)">No featured release set.</p>';
+        return;
+      }
+      const { artist, release: r } = result;
+      const streamBtns = OctoquanUI.streamButtons(r.streaming, r);
+      const badge = OctoquanUI.upcomingBadge(r);
+      const dateLine = OctoquanUI.releaseDateLine(r);
+      const countdown = OctoquanUI.countdownTimer(r);
+      el.innerHTML = `
+        <div class="release-art">
+          <img src="${r.art}" alt="${r.title} album art" />
+        </div>
+        <div class="release-info">
+          <p class="release-artist">${artist.name}</p>
+          <h2 class="release-title">${r.title.replace(' ', '<br>')}</h2>
+          <div class="release-meta">
+            ${badge}
+            <span>${r.type}</span>
+            <span>·</span>
+            <span>${r.year}</span>
+            <span>·</span>
+            <span>Octoquan Records</span>
+          </div>
+          ${dateLine}
+          ${countdown}
+          <p class="release-desc">${r.desc}</p>
+          ${streamBtns ? `<div class="stream-links">${streamBtns}</div>` : ''}
+        </div>`;
+    });
+
+    // ── Artist Grid + Count ───────────────────────────────────────
+    renderArtistGrid('roster-grid', { showPlaceholders: false }).then(async () => {
+      const artists = await OctoquanDB.getAllArtists();
+      const count = artists.filter(a => a.status === 'active').length;
+      document.getElementById('artist-count').textContent = String(count).padStart(3, '0');
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/_templates/(.*)",
+      "headers": [
+        { "key": "x-robots-tag", "value": "noindex" }
+      ]
+    }
+  ],
+  "rewrites": [],
+  "redirects": [],
+  "routes": [
+    {
+      "src": "/_templates/(.*)",
+      "status": 404,
+      "dest": "/404.html"
+    }
+  ]
+}
