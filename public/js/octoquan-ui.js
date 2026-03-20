@@ -100,19 +100,18 @@ const OctoquanUI = (() => {
   }
 
   function footer() {
-    return `
-      <footer>
-        <div class="footer-inner">
-          <p class="footer-copy">© Octoquan Records <span id="year"></span> · Arkansas, USA</p>
-          <div class="footer-links">
-            <a href="/about">About</a>
-            <a href="/demos">Demos</a>
-            <a href="/store">Store</a>
-            <a href="mailto:info@octoquan.com">Contact</a>
-          </div>
+  return `
+    <footer>
+      <div class="footer-inner">
+        <p class="footer-copy">© Octoquan Records <span id="year"></span> · Arkansas, USA</p>
+        <div class="footer-links">
+          <a href="/about">About</a>
+          <a href="https://forms.gle/iCZnsLzhUg596hiT8" target="_blank" rel="noopener">Demos</a>
+          <a href="mailto:yiyam.music@gmail.com">Contact</a>
         </div>
-      </footer>`;
-  }
+      </div>
+    </footer>`;
+}
 
   // Stream buttons — suppressed for upcoming releases.
   function streamButtons(streaming, release) {
