@@ -104,7 +104,11 @@ const OctoquanUI = (() => {
       "FUCK OFF ISRAEL",
       "MY TAXES, MY CHOICE!",
       "ABOLISH GERRYMANDERING!!!",
-      "DON'T VOTE FOR FUCKHEADS"
+      "DON'T VOTE FOR FUCKHEADS",
+      "YOU'RE BEAUTIFUL",
+      "BE GOOD",
+      "YOU'RE SO LOVELY",
+      "AFROMAN IS AN AMERICAN HERO!"
     ];
 
     const today = new Date();
