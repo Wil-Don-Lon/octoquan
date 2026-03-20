@@ -13,11 +13,15 @@
       "status": "active",
       "photo": "/assets/images/artists/yiyam/yiyam.png",
       "genres": [
-        "Egg Punk",
-        "Garage Psych",
-        "Avant-Garde",
+        "Scramble Punk",
+        "Apartment Psych",
+        "Avant Garden",
         "Country Bumpkin",
-        "Funque Metal"
+        "Funque Metal",
+        "Lo-Fi Revival",
+        "Y'alternative",
+        "Hill Surf"
+
       ],
       "bio": "Yiyam is the solo project of J. Jilenquan, a self-taught multi-instrumentalist and producer from the Northwest Arkansas Bay Area. With a DIY ethos and a penchant for genre-hopping, Yiyam's music is a chaotic blend of punk energy, psychedelic experimentation, and heartfelt vulnerability.",
       "riyl": [
@@ -36,6 +40,7 @@
         "youtube": "https://www.youtube.com/@j.jilenquan",
         "soundcloud": "https://on.soundcloud.com/IwsYL0omwG4rtKWgAp",
         "bandcamp": null,
+        "qobuz": "https://www.qobuz.com/dk-en/interpreter/yiyam/25318651",
         "instagram": null
       },
       "releases": [
@@ -76,7 +81,8 @@
             "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_lerf4RHl3brtxz2w9Bjt2mP4UgV_X0iPM",
             "soundcloud": null,
             "bandcamp": null,
-            "tidal": null
+            "tidal": null,
+            "qobuz": "https://www.qobuz.com/dk-en/album/cognitive-dissonance-yiyam/o7nko38mzgera"
           }
         },
         {
@@ -87,9 +93,24 @@
           "year": "2026",
           "releaseDate": "2026-08-11",
           "art": "/assets/images/artists/yiyam/concentrated-octoquan.png",
-          "desc": "This is the second release by the prolifically weird singer-songwriter-producer-ceo-sex haver Yiyam, better known by his stage name J. Jilenquan. He has done it again, turning his silly little thoughts and feelings into sonic soundscapes, tapestries of emotion into soiled rags of impulsive reactivity. He leverages the raw feelings of the human experience, from all corners of fear, love, disgust, joy, disappointment, pride, and self-deprecation. For your listening pleasure, enjoy.",
+          "desc": "This is the second release by the prolifically weird singer-songwriter-producer-ceo-sex haver Yiyam, better known by his stage name J. Jilenquan. He has done it again, turning his silly little thoughts and feelings into sonic soundscapes by morphing tapestries of emotion into soiled rags of impulsive reactivity. He leverages the raw feelings of the human experience, from all corners of fear, love, disgust, joy, disappointment, pride, and self-deprecation for your listening pleasure. Enjoy.",
           "tracklist": [
-            "Homework With U"
+            "Homework With U", 
+            "Gringo De Gallo,", 
+            "Shine", 
+            "Break Me Down", 
+            "Asshole", 
+            "Nonshalant",
+            "6-7", 
+            "Pony Up",
+            "Sick of It",
+            "Simp Anthem",
+            "Doomer Poop",
+            "I Don't Wanna Be Cool",
+            "Sober",
+            "Sober (Reprise)",
+            "Sober (Reprise Reprise)",
+            "Sober (Reprise Reprise Reprise)"
           ],
           "streaming": {
             "spotify": null,
@@ -99,7 +120,8 @@
             "youtube": null,
             "soundcloud": null,
             "bandcamp": null,
-            "tidal": null
+            "tidal": null,
+            "qobuz": null
           }
         }
       ]
@@ -112,15 +134,15 @@
       "status": "active",
       "photo": "/assets/images/artists/lonon-underground/boombalacaca.png",
       "genres": [
-        "techno",
-        "house",
+        "techgnome",
+        "chicken house",
         "freekstyle",
         "frogwave",
         "post punk",
-        "avant-garde",
+        "avant garde",
         "dadbodbeat"
       ],
-      "bio": "Lonon Underground is the precipice of the low-key, lo-fi, and low-effort production philosophy poineered by artists such as Ween, Beck, and Daniel Johnston. Founded by Big D. Lenoir, a 7-time divorce-nominated pothead and his teenage burnout son Slick Willie during the COVID-19 plandemic, Lonon Underground began producing alien soundscapes, ranging in quality from Freekstyle Chicken Haus to Bogart Techno to Stoner Nightmare Acid Puke Rock, simply out of a surplus of boredom and Spanish Eddie. Fun Fact: 100% of their music was made under the influence of a proprietary hallucinagenic substance produced in MAKR laboratories, which is rumored to have been concocted solely out of expired printer ink and wallpaper paste. This is perhaps the pinnacle representation of what it means to be stupid. Lonon Underground is what it sounds like to be a divorced father of an autistic teenage psychonaut. Listner disgression is advised.",
+      "bio": "Lonon Underground is the precipice of the low-key, lo-fi, and low-effort. Founded by Big D. Lenoir, a 7-time divorce-nominated pothead, and his teenage burnout son Slick Willie during the COVID-19 plandemic, Lonon Underground began producing extremely potent music. Ranging in quality from Freekstyle Chicken House to Bogart Electro to Stoner Nightmare Acid Puke Rock, their stylistic reslessness is self evident. Supposedly, 100% of their music was made under the influence of a proprietary hallucinagenic substance produced in MAKR laboratories, which was rumored to have been concocted solely out of waste printer ink and bad batch wallpaper paste. Representing what is perhaps the pinnacle of stupidity, Lonon Underground is what it sounds like to be locked in a room with an intoxicated father of an autistic teenage psychonaut. Listner disgression is advised.",
       "riyl": [
         "Paranoid London",
         "Ween",
@@ -137,6 +159,7 @@
         "youtube": "https://www.youtube.com/@lononunderground8026",
         "soundcloud": null,
         "bandcamp": null,
+        "qobuz": null,
         "instagram": null
       },
       "releases": []
@@ -145,16 +168,23 @@
       "artistId": 3,
       "slug": "snowday",
       "number": "003",
-      "name": "Snowday",
+      "name": "snowday.",
       "status": "active",
       "photo": "/assets/images/artists/snowday/photo.png",
       "genres": [
-        "idk",
-        "what"
+        "Organic Lo-Fi",
+        "Acoustic Grunge",
+        "Folk Psychedellica",
+        "CatCore",
+        "Dorm Pop",
+        "Breath Rock",
+        "Math Folk"
       ],
-      "bio": "huh?",
+      "bio": "Snowday, originally from the DFW area, is a Texan immigrant on his way through the Fayettevillager naturalization process. Part of that process has been a test of his musical ability, of which there is extreme distinction about. His ability to compose songs in a way that is both organic but technically proficient without sounding forced will be studied for eons, even now as his soundscapes are limited by the production equipment found in your average music nerd's college dorm. The soundscapes his music exhinits are grounded, earthly, and in-touch with reality in a way that is pleasantly uncommon. This kid will take off.",
       "riyl": [
-        "title fight"
+        "Title Fight",
+        "Pavement",
+        "OCS"
       ],
       "links": {
         "spotify": null,
@@ -164,6 +194,7 @@
         "youtube": null,
         "soundcloud": null,
         "bandcamp": null,
+        "qobuz": null,
         "instagram": null
       },
       "releases": []

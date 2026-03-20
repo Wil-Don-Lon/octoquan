@@ -15,6 +15,7 @@ const OctoquanUI = (() => {
     soundcloud: 'SoundCloud',
     bandcamp:   'Bandcamp',
     tidal:      'Tidal',
+    qobuz:      'Qobuz',
   };
 
   // Labels for artist profile links
@@ -26,6 +27,7 @@ const OctoquanUI = (() => {
     youtube:    'YouTube',
     soundcloud: 'SoundCloud',
     bandcamp:   'Bandcamp',
+    qobuz:      'Qobuz',
     instagram:  'Instagram',
   };
 

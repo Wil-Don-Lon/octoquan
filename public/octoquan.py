@@ -30,8 +30,8 @@ TEMPLATES  = ROOT / "_templates"
 ARTISTS    = ROOT / "artists"
 
 # ── Canonical link key order ───────────────────────────────────
-ARTIST_LINK_KEYS  = ['spotify', 'apple', 'amazon', 'pandora', 'youtube', 'soundcloud', 'bandcamp', 'instagram']
-RELEASE_LINK_KEYS = ['spotify', 'apple', 'amazon', 'pandora', 'youtube', 'soundcloud', 'bandcamp', 'tidal']
+ARTIST_LINK_KEYS  = ['spotify', 'apple', 'amazon', 'pandora', 'youtube', 'soundcloud', 'bandcamp', 'qobuz', 'instagram']
+RELEASE_LINK_KEYS = ['spotify', 'apple', 'amazon', 'pandora', 'youtube', 'soundcloud', 'bandcamp', 'tidal', 'qobuz']
 
 # ── Helpers ───────────────────────────────────────────────────
 def slugify(s):
