@@ -13,14 +13,17 @@
       "status": "active",
       "photo": "/assets/images/artists/yiyam/yiyam.png",
       "genres": [
-        "Scramble Punk",
-        "Apartment Psych",
-        "Avant Garden",
+        "Egg Punk",
+        "Post Punk", 
+        "Psychedelic Grunge",
+        "Avant-Garde",
         "Country Bumpkin",
+        "Noise Pop",
+        "Hill Country Blues",
         "Funque Metal",
-        "Lo-Fi Revival",
+        "Lo-Fi Rock",
         "Y'alternative",
-        "Hill Surf"
+        "Experimental Pop"
 
       ],
       "bio": "Yiyam is the solo project of J. Jilenquan, a self-taught multi-instrumentalist and producer from the Northwest Arkansas Bay Area. With a DIY ethos and a penchant for genre-hopping, Yiyam's music is a chaotic blend of punk energy, psychedelic experimentation, and heartfelt vulnerability.",
@@ -174,7 +177,7 @@
       "genres": [
         "Organic Lo-Fi",
         "Acoustic Grunge",
-        "Folk Psychedellica",
+        "Folk Psychedelica",
         "CatCore",
         "Dorm Pop",
         "Breath Rock",
