@@ -14,24 +14,26 @@
       "photo": "/assets/images/artists/yiyam/yiyam.png",
       "genres": [
         "Egg Punk",
+        "Crankwave",
         "Post Punk",
+        "Punk Rock",
         "Psychedelic Grunge",
-        "Avant-Garde",
-        "Country Bumpkin",
-        "Noise Pop",
-        "Hill Country Blues",
-        "Funque Metal",
-        "Lo-Fi Rock",
+        "Prog Rock",
         "Y'alternative",
+        "Oddrock",
+        "Electro Punk",
+        "Funque Metal",
+        "Lo-Fi",
         "Experimental Pop"
       ],
       "bio": "Yiyam is the solo project of J. Jilenquan, a self-taught multi-instrumentalist and producer from the Northwest Arkansas Bay Area. With a DIY ethos and a penchant for genre-hopping, Yiyam's music is a chaotic blend of punk energy, psychedelic experimentation, and heartfelt vulnerability.",
       "riyl": [
-        "Osees",
+        "Thee Oh Sees",
         "Ween",
-        "Viagra Boys",
         "Ty Segall",
-        "King Gizzard",
+        "Viagra Boys",
+        "Wand",
+        "King Gizzard and the Lizard Wizard",
         "Black Keys"
       ],
       "links": {
@@ -41,7 +43,7 @@
         "pandora": "https://www.pandora.com/artist/yiyam/ARPkdjbqPqktltk",
         "youtube": "https://www.youtube.com/@j.jilenquan",
         "soundcloud": "https://on.soundcloud.com/IwsYL0omwG4rtKWgAp",
-        "bandcamp": null,
+        "bandcamp": "https://yiyam.bandcamp.com",
         "qobuz": "https://www.qobuz.com/dk-en/interpreter/yiyam/25318651",
         "instagram": null
       },
@@ -82,8 +84,8 @@
             "pandora": "https://www.pandora.com/artist/yiyam/cognitive-dissonance/AL4qbb5Vhx9q9kq",
             "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_lerf4RHl3brtxz2w9Bjt2mP4UgV_X0iPM",
             "soundcloud": null,
-            "bandcamp": null,
-            "tidal": null,
+            "bandcamp": "https://yiyam.bandcamp.com/album/cognitive-dissonance",
+            "tidal": "https://tidal.com/album/411392113",
             "qobuz": "https://www.qobuz.com/dk-en/album/cognitive-dissonance-yiyam/o7nko38mzgera"
           }
         },
@@ -95,7 +97,7 @@
           "year": "2026",
           "releaseDate": "2026-08-11",
           "art": "/assets/images/artists/yiyam/concentrated-octoquan.png",
-          "desc": "This is the second release by the prolifically weird singer-songwriter-producer-ceo-sex haver Yiyam, better known by his stage name J. Jilenquan. He has done it again, turning his silly little thoughts and feelings into sonic soundscapes by morphing tapestries of emotion into soiled rags of impulsive reactivity. He leverages the raw feelings of the human experience, from all corners of fear, love, disgust, joy, disappointment, pride, and self-deprecation for your listening pleasure. Enjoy.",
+          "desc": "This is the second release by the prolifically weird singer-songwriter-producer-ceo-sex-haver Yiyam, better known by his stage name J. Jilenquan. He has done it yet again, turning his silly little thoughts and feelings into sonic soundscapes by morphing tapestries of emotion into soiled rags of impulsive reactivity. He leverages the raw feelings of the human experience, from all corners of fear, love, disgust, joy, disappointment, pride, and self-deprecation for your listening pleasure. Enjoy.",
           "tracklist": [
             "Homework With U",
             "Gringo De Gallo,",
@@ -108,7 +110,7 @@
             "Sick of It",
             "Simp Anthem",
             "Doomer Poop",
-            "I Don't Wanna Be Cool",
+            "I Don't Wanna Be Cool No More",
             "Sober",
             "Sober (Reprise)",
             "Sober (Reprise Reprise)",
@@ -144,7 +146,7 @@
         "avant garde",
         "dadbodbeat"
       ],
-      "bio": "Lonon Underground is the precipice of the low-key, lo-fi, and low-effort. Founded by Big D. Lenoir, a 7-time divorce-nominated pothead, and his teenage burnout son Slick Willie during the COVID-19 plandemic, Lonon Underground began producing extremely potent music. Ranging in quality from Freekstyle Chicken House to Bogart Electro to Stoner Nightmare Acid Puke Rock, their stylistic reslessness is self evident. Supposedly, 100% of their music was made under the influence of a proprietary hallucinagenic substance produced in MAKR laboratories, which was rumored to have been concocted solely out of waste printer ink and bad batch wallpaper paste. Representing what is perhaps the pinnacle of stupidity, Lonon Underground is what it sounds like to be locked in a room with an intoxicated father of an autistic teenage psychonaut. Listner disgression is advised.",
+      "bio": "Lonon Underground is the precipice of the low-key, lo-fi, and low-effort. Founded by Big D. Lenoir, a 7-time divorce-nominated pothead, and his teenage burnout son Slick Willie during the COVID-19 plandemic, Lonon Underground began producing extremely potent music. Ranging in quality from Freekstyle Chicken House to Bogart Electro to Stoner Nightmare Acid Puke Rock, their stylistic reslessness is self evident. Supposedly, 100% of their music was made under the influence of a proprietary hallucinagenic substance produced in NBG laboratories, which was rumored to have been concocted solely out of waste printer ink and bad batch wallpaper paste. Representing what is perhaps the pinnacle of stupidity, Lonon Underground is what it sounds like to be locked in a room with an intoxicated father of an autistic teenage psychonaut. Listner disgression is advised.",
       "riyl": [
         "Paranoid London",
         "Ween",
@@ -189,7 +191,8 @@
         "OCS",
         "Adrianne Lenker",
         "Big Thief",
-        "Dinosaur Jr."
+        "Dinosaur Jr.",
+        "King Krule"
       ],
       "links": {
         "spotify": null,
