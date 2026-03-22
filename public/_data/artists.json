@@ -1,8 +1,8 @@
 {
   "meta": {
     "nextArtistId": 4,
-    "nextReleaseId": 3,
-    "featuredReleaseId": 2
+    "nextReleaseId": 4,
+    "featuredReleaseId": 3
   },
   "artists": [
     {
@@ -44,7 +44,6 @@
         "youtube": "https://www.youtube.com/@j.jilenquan",
         "soundcloud": "https://on.soundcloud.com/IwsYL0omwG4rtKWgAp",
         "bandcamp": "https://yiyam.bandcamp.com",
-        "tidal": "https://tidal.com/artist/53255517",
         "qobuz": "https://www.qobuz.com/dk-en/interpreter/yiyam/25318651",
         "instagram": null
       },
@@ -98,7 +97,7 @@
           "year": "2026",
           "releaseDate": "2026-08-11",
           "art": "/assets/images/artists/yiyam/concentrated-octoquan.png",
-          "desc": "This is the second release by the prolifically weird singer-songwriter-producer-ceo-sex-haver Yiyam, better known by his stage name J. Jilenquan. He has done it yet again, turning his silly little thoughts and feelings into sonic soundscapes by morphing tapestries of emotion into soiled rags of impulsive reactivity. He leverages the raw feelings of the human experience, from all corners of fear, love, disgust, joy, disappointment, pride, and self-deprecation for your listening pleasure. Enjoy.",
+          "desc": "This is the second release by the prolifically weird singer-songwriter-producer-CEO Yiyam, better known by his stage name J. Jilenquan. He has done it yet again, turning his silly little thoughts and feelings into sonic soundscapes by morphing tapestries of emotion into soiled rags of impulsive reactivity. He leverages the raw feelings of the human experience, from all corners of fear, love, disgust, joy, disappointment, pride, and self-deprecation for your listening pleasure. Enjoy.",
           "tracklist": [
             "Homework With U",
             "Gringo De Gallo,",
@@ -147,7 +146,7 @@
         "avant garde",
         "dadbodbeat"
       ],
-      "bio": "Lonon Underground is the precipice of the low-key, lo-fi, and low-effort. Founded by Big D. Lenoir, a 7-time divorce-nominated pothead, and his teenage burnout son Slick Willie during the COVID-19 plandemic, Lonon Underground began producing extremely potent music. Ranging in quality from Freekstyle Chicken House to Bogart Electro to Stoner Nightmare Acid Puke Rock, their stylistic reslessness is self evident. Supposedly, 100% of their music was made under the influence of a proprietary hallucinagenic substance produced in NBG laboratories, which was rumored to have been concocted solely out of waste printer ink and bad batch wallpaper paste. Representing what is perhaps the pinnacle of stupidity, Lonon Underground is what it sounds like to be locked in a room with an intoxicated father of an autistic teenage psychonaut. Listner disgression is advised.",
+      "bio": "Representing what is perhaps the pinnacle of stupidity in art, Lonon Underground is what it sounds like to be locked in a house with noting but medical grade Quan, a room full of synthesizers, and no obligations whatsoever. Founded by Big D. Lenoir, a 7-time divorce-nominated pothead, and his teenage burnout son Slick Willie, Lonon Underground began producing extremely potent music during the COVID-19 plandemic. Ranging in quality from Freekstyle Chicken House to Bogart Electro to Stoner Nightmare Acid Puke Rock, their stylistic reslessness is self evident. According to anthropologists, 100% of their music was made under the influence of a proprietary hallucinagenic substance produced in NBG laboratories, which was rumored to have been concocted solely out of waste printer ink and bad batch wallpaper paste. Listner disgression is advised.",
       "riyl": [
         "Paranoid London",
         "Ween",
@@ -167,7 +166,51 @@
         "qobuz": null,
         "instagram": null
       },
-      "releases": []
+      "releases": [
+        {
+          "releaseId": 3,
+          "slug": "self-titled",
+          "title": "Lonon Underground",
+          "type": "LP",
+          "year": "2026",
+          "releaseDate": "2026-10-15",
+          "art": "/assets/images/artists/lonon-underground/self-titled.png",
+          "desc": "In the time of the great COVID-19 pandemic, whilst everyone was busy internetmaxxing and gooning to e-girls on Discord, the Lonons decided to put their brains in neutral and start spitting out some heinous tunes. Neurochemically-distorted rants about chickens, stupidity, love, hatred, and the economy spill over top of a techno spaceship as it blasts through time itsellf. Strap in as Big D. Lenoir and Slick Willie take you on a journey through a simultanously lo-fi and high-as-fuck brain forest. This is assuredly an Octoquan original. Enjoy.",
+          "tracklist": [
+            "101",
+            "In the Pines",
+            "Tao & Pico",
+            "Oh Kevin",
+            "Chicken Nugget",
+            "Natural Selection (Mass Extinction)",
+            "Boombalacaca",
+            "WL/WH",
+            "Detroit Dreams",
+            "Off Tha Grid",
+            "The Korine Harmony",
+            "Blue Skies",
+            "Take My Waste",
+            "Hamstrand",
+            "Never Cry Tonight",
+            "The Uke Song",
+            "B.H. Trash Transfusion",
+            "Water of a Broken Heart",
+            "Fire of a Broken Mind",
+            "Quantum"
+          ],
+          "streaming": {
+            "spotify": null,
+            "apple": null,
+            "amazon": null,
+            "pandora": null,
+            "youtube": null,
+            "soundcloud": null,
+            "bandcamp": null,
+            "tidal": null,
+            "qobuz": null
+          }
+        }
+      ]
     },
     {
       "artistId": 3,
