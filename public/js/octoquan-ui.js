@@ -74,10 +74,10 @@ const OctoquanUI = (() => {
       "DON'T BE AN ASSHOLE",
       "FUCK U IF U RACIST",
       "FUCK THE GOVERNMENT",
-      "LOVE YOURSELF",
+      "LOVE URSELF",
       "FORGIVENESS IS GOOD",
       "WAR IS MURDER",
-      "I LOVE YOU",
+      "I LOVE U!",
       "THANKS FOR BEING YOU!",
       "SHED LIGHT ON TYRANNY",
       "THIS MACHINE KILLS FASCISTS",
@@ -98,8 +98,7 @@ const OctoquanUI = (() => {
       "NAZI PUNKS FUCK OFF",
       "THE TWO-PARTY SYSTEM IS INHERENTLY ANTI-AMERICAN",
       "GODDAMN UNCLE SAM",
-      "MALE INSECURITY IS AN EPIDEMIC",
-      "FEMALE INSECURITY IS AN EPIDEMIC",
+      "INSECURITY IS AN EPIDEMIC",
       "LOVE IS LOVE",
       "FUCK OFF ISRAEL",
       "MY TAXES, MY CHOICE!",
@@ -108,7 +107,8 @@ const OctoquanUI = (() => {
       "YOU'RE BEAUTIFUL",
       "BE GOOD",
       "YOU'RE SO LOVELY",
-      "AFROMAN IS AN AMERICAN HERO!"
+      "AFROMAN IS AN AMERICAN HERO!",
+      "NO TAXATION WITHOUT REPRESENTATION!"
     ];
 
     const today = new Date();
