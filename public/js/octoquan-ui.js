@@ -60,6 +60,7 @@ const OctoquanUI = (() => {
 
   function marquee() {
     const phrases = [
+      'FUCK THE IRS', 
       'FUCK ICE',
       'LOVE THY NEIGHBOR',
       'SHOP LOCAL',
