@@ -11,6 +11,7 @@
 ║    python3 octoquan.py list-shows                            ║
 ║    python3 octoquan.py cancel-show                           ║
 ║    python3 octoquan.py list                                  ║
+║    python3 octoquan.py generate-sitemap                      ║
 ╚══════════════════════════════════════════════════════════════╝
 """
 
