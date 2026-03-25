@@ -31,7 +31,7 @@ SITEMAP_FILE = ROOT / "sitemap.xml"
 TEMPLATES    = ROOT / "_templates"
 ARTISTS      = ROOT / "artists"
 
-DOMAIN = "https://octoquan.com"
+DOMAIN = "https://www.octoquan.com"
 
 # ── Canonical link key order ───────────────────────────────────
 ARTIST_LINK_KEYS  = ['spotify', 'apple', 'amazon', 'pandora', 'youtube', 'soundcloud', 'bandcamp', 'qobuz', 'instagram']
