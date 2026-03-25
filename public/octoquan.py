@@ -23,11 +23,14 @@ from datetime import date
 from pathlib import Path
 
 # ── Paths ─────────────────────────────────────────────────────
-ROOT       = Path(__file__).parent
-DATA_FILE  = ROOT / "_data" / "artists.json"
-SHOWS_FILE = ROOT / "_data" / "shows.json"
-TEMPLATES  = ROOT / "_templates"
-ARTISTS    = ROOT / "artists"
+ROOT         = Path(__file__).parent
+DATA_FILE    = ROOT / "_data" / "artists.json"
+SHOWS_FILE   = ROOT / "_data" / "shows.json"
+SITEMAP_FILE = ROOT / "sitemap.xml"
+TEMPLATES    = ROOT / "_templates"
+ARTISTS      = ROOT / "artists"
+
+DOMAIN = "https://octoquan.com"
 
 # ── Canonical link key order ───────────────────────────────────
 ARTIST_LINK_KEYS  = ['spotify', 'apple', 'amazon', 'pandora', 'youtube', 'soundcloud', 'bandcamp', 'qobuz', 'instagram']
@@ -144,6 +147,45 @@ def scaffold_release(artist, release):
         print(f"  📄 Created {page.relative_to(ROOT)}")
     print(f"  💡 Drop album art at: assets/images/artists/{artist['slug']}/{release['slug']}.[ext]")
 
+def generate_sitemap():
+    """Generate sitemap.xml from artists.json and write to public root."""
+    data    = load_data()
+    today   = date.today().isoformat()
+
+    urls = []
+
+    # Static pages
+    static = ['', '/artists', '/releases', '/shows', '/about']
+    for path in static:
+        urls.append((f"{DOMAIN}{path}", today, 'weekly', '1.0' if path == '' else '0.8'))
+
+    # Artist pages
+    for artist in data['artists']:
+        if artist.get('status') != 'active':
+            continue
+        urls.append((f"{DOMAIN}/artists/{artist['slug']}", today, 'weekly', '0.7'))
+
+        # Release pages
+        for release in artist.get('releases', []):
+            urls.append((f"{DOMAIN}/artists/{artist['slug']}/{release['slug']}", today, 'monthly', '0.6'))
+
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>']
+    lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+    for loc, lastmod, changefreq, priority in urls:
+        lines.append('  <url>')
+        lines.append(f'    <loc>{loc}</loc>')
+        lines.append(f'    <lastmod>{lastmod}</lastmod>')
+        lines.append(f'    <changefreq>{changefreq}</changefreq>')
+        lines.append(f'    <priority>{priority}</priority>')
+        lines.append('  </url>')
+    lines.append('</urlset>')
+
+    SITEMAP_FILE.write_text('\n'.join(lines))
+    print(f"  🗺️  Sitemap generated: {SITEMAP_FILE.relative_to(ROOT)} ({len(urls)} URLs)")
+
+def cmd_generate_sitemap():
+    generate_sitemap()
+
 # ── Commands ──────────────────────────────────────────────────
 def cmd_list():
     data = load_data()
@@ -218,6 +260,7 @@ def cmd_add_artist():
     artists.append(artist)
     save_data(data)
     scaffold_artist(artist)
+    generate_sitemap()
     print(f"\n🐙 Artist '{name}' added! (artistId={artist_id}) Push to GitHub to deploy.\n")
 
 def cmd_add_release():
@@ -285,6 +328,7 @@ def cmd_add_release():
     artist['releases'].append(release)
     save_data(data)
     scaffold_release(artist, release)
+    generate_sitemap()
 
     set_now = input(f"\n  Set releaseId={release_id} as the featured release on the homepage? [y/N]: ").strip().lower()
     if set_now == 'y':
@@ -424,26 +468,28 @@ def cmd_help():
     print("""
   OCTOQUAN RECORDS CLI
   ─────────────────────
-  python3 octoquan.py list             List all artists and releases
-  python3 octoquan.py add-artist       Add a new artist
-  python3 octoquan.py add-release      Add a release to an existing artist
-  python3 octoquan.py set-featured     Set the featured release on the homepage
-  python3 octoquan.py list-shows       List all shows
-  python3 octoquan.py add-show         Add an upcoming show
-  python3 octoquan.py cancel-show      Mark a show as cancelled
-  python3 octoquan.py help             Show this message
+  python3 octoquan.py list               List all artists and releases
+  python3 octoquan.py add-artist         Add a new artist
+  python3 octoquan.py add-release        Add a release to an existing artist
+  python3 octoquan.py set-featured       Set the featured release on the homepage
+  python3 octoquan.py list-shows         List all shows
+  python3 octoquan.py add-show           Add an upcoming show
+  python3 octoquan.py cancel-show        Mark a show as cancelled
+  python3 octoquan.py generate-sitemap   Regenerate sitemap.xml
+  python3 octoquan.py help               Show this message
     """)
 
 # ── Main ──────────────────────────────────────────────────────
 COMMANDS = {
-    'list':          cmd_list,
-    'add-artist':    cmd_add_artist,
-    'add-release':   cmd_add_release,
-    'set-featured':  cmd_set_featured,
-    'list-shows':    cmd_list_shows,
-    'add-show':      cmd_add_show,
-    'cancel-show':   cmd_cancel_show,
-    'help':          cmd_help,
+    'list':              cmd_list,
+    'add-artist':        cmd_add_artist,
+    'add-release':       cmd_add_release,
+    'set-featured':      cmd_set_featured,
+    'list-shows':        cmd_list_shows,
+    'add-show':          cmd_add_show,
+    'cancel-show':       cmd_cancel_show,
+    'generate-sitemap':  cmd_generate_sitemap,
+    'help':              cmd_help,
 }
 
 if __name__ == '__main__':
