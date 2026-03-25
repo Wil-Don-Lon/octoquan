@@ -58,6 +58,20 @@ const OctoquanUI = (() => {
       </header>`;
   }
 
+  function setMeta({ title, description, keywords } = {}) {
+    if (title) document.title = title;
+    if (description) {
+      let el = document.querySelector('meta[name="description"]');
+      if (!el) { el = document.createElement('meta'); el.name = 'description'; document.head.appendChild(el); }
+      el.content = description;
+    }
+    if (keywords) {
+      let el = document.querySelector('meta[name="keywords"]');
+      if (!el) { el = document.createElement('meta'); el.name = 'keywords'; document.head.appendChild(el); }
+      el.content = keywords;
+    }
+  }
+
   function marquee() {
     const phrases = [
       'FUCK THE IRS', 
@@ -251,5 +265,6 @@ const OctoquanUI = (() => {
     countdownTimer,
     injectShell,
     initYear,
+    setMeta,
   };
 })();

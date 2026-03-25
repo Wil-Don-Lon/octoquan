@@ -31,11 +31,19 @@ async function renderReleasePage(overrides = {}) {
     desc: overrides.desc ?? release.desc,
   };
 
+  
+
   const released   = OctoquanDB.isReleased(r);
   const streamBtns = OctoquanUI.streamButtons(r.streaming, r);
   const badge      = OctoquanUI.upcomingBadge(r);
   const dateLine   = OctoquanUI.releaseDateLine(r);
   const countdown  = OctoquanUI.countdownTimer(r);
+
+  OctoquanUI.setMeta({
+    title: `${r.title} — ${artist.name} — Octoquan Records`,
+    description: `${r.title} is a ${r.type} by ${artist.name} on Octoquan Records. ${r.desc.slice(0, 120)}...`,
+    keywords: `${r.title}, ${artist.name}, Octoquan Records, NWA music, independent music`,
+  });
 
   document.getElementById('release-hero').innerHTML = `
     <div class="release-hero${released ? '' : ' release-hero--upcoming'}">

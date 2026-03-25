@@ -27,6 +27,12 @@ async function renderArtistPage(overrides = {}) {
     riyl:   overrides.riyl   ?? (Array.isArray(artist.riyl) ? artist.riyl.join(' · ') : artist.riyl),
   };
 
+  OctoquanUI.setMeta({
+    title: `${a.name} — Octoquan Records`,
+    description: `${a.name} is an artist on Octoquan Records. ${a.bio.slice(0, 120)}...`,
+    keywords: `${a.name}, Octoquan Records, ${a.genres.join(', ')}, NWA music, independent music`,
+  });
+
   // Render hero
   const socialHTML = OctoquanUI.socialButtons(a.links);
   document.getElementById('artist-hero').innerHTML = `
