@@ -204,7 +204,7 @@ def cmd_list():
     print(f"  Today               : {today}")
     print(f"{'─'*65}")
     for a in artists:
-        status = '✅' if a['status'] == 'active' else '⏸️ '
+        status = '▶︎' if a['status'] == 'active' else '⏸'
         print(f"  {status} artistId={a['artistId']}  {a['number']}  {a['name']}  ({a['slug']})")
         for r in a.get('releases', []):
             featured_marker  = ' ★ FEATURED' if r['releaseId'] == featured_id else ''
