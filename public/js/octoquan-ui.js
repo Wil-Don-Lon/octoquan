@@ -226,7 +226,13 @@ const OctoquanUI = (() => {
     img.setAttribute('aria-hidden', 'true');
     document.body.insertBefore(img, document.body.firstChild);
 
+    const isMobile = () => window.innerWidth <= 768;
+
     function update() {
+      if (isMobile()) {
+        img.style.transform = 'none';
+        return;
+      }
       const scrollY   = Math.max(0, window.scrollY);
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
       const progress  = maxScroll > 0 ? Math.min(1, Math.max(0, scrollY / maxScroll)) : 0;
