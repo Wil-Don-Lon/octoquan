@@ -130,7 +130,7 @@ const OctoquanUI = (() => {
           <div class="footer-links">
             <a href="/about">About</a>
             <a href="https://forms.gle/iCZnsLzhUg596hiT8" target="_blank" rel="noopener">Demos</a>
-            <a href="mailto:yiyam.music@gmail.com">Contact</a>
+            <a href="mailto:info@octoquan.com">Contact</a>
           </div>
         </div>
       </footer>`;
