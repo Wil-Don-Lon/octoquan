@@ -98,63 +98,19 @@ const OctoquanUI = (() => {
         "SUPPORT LOCAL ARTISTS",
         "DON'T DO DRUGS, KIDS",
         "EAT YOUR VEGGIES"
-
-
-
-      //job stoppers, proceed with caution
-        // 'FUCK THE IRS', 
-        // 'FUCK ICE',
-        // 'PUNCH A NAZI',
-        // "DEAD PEDOPHILES DON'T REOFFEND",
-        // 'DIY OR DIE',
-        // 'THE ONLY GOOD RAPIST IS A DEAD RAPIST',
-        // "DON'T BE AN ASSHOLE",
-        // "FUCK U IF U RACIST",
-        // "FUCK THE GOVERNMENT",
-        // "WAR IS MURDER",
-        // "SHED LIGHT ON TYRANNY",
-        // "THIS MACHINE KILLS FASCISTS",
-        // "STAY STRAPPED",
-        // "STAY WOKE",
-        // "ABOLISH INSIDER TRADING!",
-        // "TERM LIMITS FOR CONGRESSMEN!",
-        // "ABOLISH CORPORATE LOBBYING!",
-        // "LOBBYING = BRIBERY",
-        // "INJUSTICE FOR ONE IS INJUSTICE FOR ALL",
-        // "KEEP YOUR RELIGEON TO YOURSELF",
-        // "MAKE ABORTION SAFE AGAIN",
-        // "FUCK DONALD TRUMP",
-        // "FUCK JD VANCE",
-        // "FUCK SARAH HUCKABEE",
-        // "UNIONIZE!!!",
-        // "NAZI PUNKS FUCK OFF",
-        // "THE TWO-PARTY SYSTEM IS INHERENTLY ANTI-AMERICAN",
-        // "GODDAMN UNCLE SAM",
-        // "INSECURITY IS AN EPIDEMIC",
-        // "FUCK OFF ISRAEL",
-        // "MY TAXES, MY CHOICE!",
-        // "ABOLISH GERRYMANDERING!!!",
-        // "DON'T VOTE FOR FUCKHEADS",
-        // "AFROMAN IS AN AMERICAN HERO!",
-        // "NO TAXATION WITHOUT REPRESENTATION!"
     ];
 
     const today = new Date();
     const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
     const phrase = phrases[seed % phrases.length];
 
-    // Each repeated item is the phrase + padding on both sides (0 32px = ~64px total).
-    // Monospace-ish uppercase text at 11px with letter-spacing 3px:
-    // rough estimate is ~10px per character including spacing.
-    // The track is duplicated (x2) for seamless looping — animation scrolls 50%.
-    // We want a consistent pixels-per-second speed regardless of phrase length.
-    const PX_PER_CHAR = 10;   // approximate px width per character at our font size
-    const PADDING_PX  = 64;   // 32px each side per span
+    const PX_PER_CHAR = 10;
+    const PADDING_PX  = 64;
     const ITEMS       = 30;
-    const SPEED       = 120;  // pixels per second — tune this to taste
+    const SPEED       = 120;
 
     const singleItemWidth = phrase.length * PX_PER_CHAR + PADDING_PX;
-    const halfTrackWidth  = singleItemWidth * ITEMS; // the 50% we animate across
+    const halfTrackWidth  = singleItemWidth * ITEMS;
     const duration        = Math.round(halfTrackWidth / SPEED);
 
     const items = Array(ITEMS).fill(phrase)
@@ -167,18 +123,18 @@ const OctoquanUI = (() => {
   }
 
   function footer() {
-  return `
-    <footer>
-      <div class="footer-inner">
-        <p class="footer-copy">© Octoquan Records <span id="year"></span> · Arkansas, USA</p>
-        <div class="footer-links">
-          <a href="/about">About</a>
-          <a href="https://forms.gle/iCZnsLzhUg596hiT8" target="_blank" rel="noopener">Demos</a>
-          <a href="mailto:yiyam.music@gmail.com">Contact</a>
+    return `
+      <footer>
+        <div class="footer-inner">
+          <p class="footer-copy">© Octoquan Records <span id="year"></span> · Arkansas, USA</p>
+          <div class="footer-links">
+            <a href="/about">About</a>
+            <a href="https://forms.gle/iCZnsLzhUg596hiT8" target="_blank" rel="noopener">Demos</a>
+            <a href="mailto:yiyam.music@gmail.com">Contact</a>
+          </div>
         </div>
-      </div>
-    </footer>`;
-}
+      </footer>`;
+  }
 
   // Stream buttons — suppressed for upcoming releases.
   function streamButtons(streaming, release) {
@@ -204,7 +160,7 @@ const OctoquanUI = (() => {
 
   // Returns a "Released Month Day, Year" line for released releases, or empty string.
   function releaseDateLine(release) {
-    if (!OctoquanDB.isReleased(release)) return ''; // upcoming uses countdown instead
+    if (!OctoquanDB.isReleased(release)) return '';
     const formatted = OctoquanDB.formatReleaseDate(release.releaseDate);
     if (!formatted) return '';
     return `<p class="release-date-line">Released ${formatted}</p>`;
@@ -261,10 +217,36 @@ const OctoquanUI = (() => {
     if (el) el.textContent = new Date().getFullYear();
   }
 
+  function initParallax() {
+    const img = document.createElement('img');
+    img.className = 'parallax-bg';
+    img.id = 'parallax-bg';
+    img.src = '/assets/images/logos/superquan.png';
+    img.alt = '';
+    img.setAttribute('aria-hidden', 'true');
+    document.body.insertBefore(img, document.body.firstChild);
+
+    function update() {
+      const scrollY   = Math.max(0, window.scrollY);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress  = maxScroll > 0 ? Math.min(1, Math.max(0, scrollY / maxScroll)) : 0;
+      const imgHeight = img.offsetHeight;
+      const travel    = Math.max(0, imgHeight - window.innerHeight);
+      img.style.transform = `translate3d(0, ${-progress * travel}px, 0)`;
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+
+    if (img.complete) { update(); }
+    else { img.addEventListener('load', update); }
+  }
+
   function injectShell(activePage) {
     document.body.insertAdjacentHTML('afterbegin', nav(activePage) + marquee());
     document.body.insertAdjacentHTML('beforeend', footer());
     initYear();
+    initParallax();
   }
 
   return {
