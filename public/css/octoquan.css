@@ -43,6 +43,7 @@ header { position: sticky; top: 0; z-index: 20; background: rgba(0,0,0,.92); bor
 
 /* ── SECTION COMMON ── */
 section { padding: 100px 20px; position: relative; z-index: 1; }
+.artist-hero, .releases-section, .release-hero, .tracklist-section, .about-strip, .about-inner, .shows-hero, .shows-section { position: relative; z-index: 1; }
 .section-inner { max-width: 1140px; margin: 0 auto; }
 .section-label { font-family: var(--mono); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 48px; display: flex; align-items: center; gap: 16px; }
 .section-label::after { content: ''; flex: 1; height: 1px; background: var(--stroke); }
