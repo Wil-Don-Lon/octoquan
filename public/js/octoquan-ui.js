@@ -236,7 +236,7 @@ const OctoquanUI = (() => {
       const scrollY   = Math.max(0, window.scrollY);
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
       const progress  = maxScroll > 0 ? Math.min(1, Math.max(0, scrollY / maxScroll)) : 0;
-      const imgHeight = img.offsetHeight;
+      const imgHeight = img.offsetWidth; // height is set to 100vw
       const travel    = Math.max(0, imgHeight - window.innerHeight);
       img.style.transform = `translate3d(0, ${-progress * travel}px, 0)`;
     }
