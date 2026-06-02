@@ -67,7 +67,7 @@ async function renderArtistPage(overrides = {}) {
     const countdown = OctoquanUI.countdownTimer(r);
     return `
       <div class="release-row${released ? '' : ' release-row--upcoming'}">
-        <img class="release-art" src="${r.art}" alt="${r.title}" />
+        <a href="/artists/${a.slug}/${r.slug}"><img class="release-art" src="${r.art}" alt="${r.title}" /></a>
         <div class="release-info">
           <div class="release-meta">
             ${badge}
