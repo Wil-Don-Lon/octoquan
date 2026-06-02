@@ -31,8 +31,6 @@ async function renderReleasePage(overrides = {}) {
     desc: overrides.desc ?? release.desc,
   };
 
-  
-
   const released   = OctoquanDB.isReleased(r);
   const streamBtns = OctoquanUI.streamButtons(r.streaming, r);
   const badge      = OctoquanUI.upcomingBadge(r);
@@ -49,25 +47,18 @@ async function renderReleasePage(overrides = {}) {
     <div class="release-hero${released ? '' : ' release-hero--upcoming'}">
       <img class="release-art" src="${r.art}" alt="${r.title}" />
       <div class="release-info">
-        <div class="breadcrumb">
-          <a href="/artists">Artists</a>
-          <span>·</span>
-          <a href="/artists/${artist.slug}">${artist.name}</a>
-          <span>·</span>
-          <span>${r.title}</span>
-        </div>
+        <h1 class="release-title">${r.title}</h1>
         <div class="release-meta">
           ${badge}
+          <span>${artist.name}</span><span>·</span>
           <span>${r.type}</span><span>·</span>
           <span>${r.year}</span><span>·</span>
+          ${r.tracklist && r.tracklist.length ? `<span>${r.tracklist.length} tracks</span><span>·</span>` : ''}
           <span>Octoquan Records</span>
-          ${r.tracklist && r.tracklist.length && released ? `<span>·</span><span>${r.tracklist.length} tracks</span>` : ''}
         </div>
-        <h1 class="release-title">${r.title}</h1>
-        ${dateLine}
         ${countdown}
-        <p class="release-desc">${r.desc}</p>
         ${streamBtns ? `<div class="stream-links">${streamBtns}</div>` : ''}
+        <p class="release-desc">${r.desc}</p>
       </div>
     </div>`;
 
