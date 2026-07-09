@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services — Octoquan Records</title>
+  <link rel="icon" type="image/png" href="/assets/images/logos/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Unbounded:wght@400;600;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/css/octoquan.css" />
+  <meta name="description" content="Octoquan Records offers music production, mixing, mastering, session musicians, art, video, photo, and promotion services out of Northwest Arkansas.">
+  <meta name="keywords" content="Octoquan, Octoquan Records, music production, recording, mixing, mastering, producing, session musicians, album art, music video, photography, music promotion, NWA studio, Arkansas recording studio">
+  <style>
+    .page-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ── HERO ── */
+    .services-hero {
+      padding: 100px 20px 80px;
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    .services-hero-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .services-hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .services-hero-heading {
+      font-family: var(--display);
+      font-size: clamp(52px, 8vw, 100px);
+      font-weight: 900;
+      letter-spacing: -3px;
+      line-height: .9;
+      opacity: 0;
+      animation: fadeUp .9s ease forwards .1s;
+    }
+
+    .services-hero-heading em {
+      font-style: normal;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, .9);
+      color: transparent;
+    }
+
+    .services-hero-img {
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .services-intro {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      padding-top: 12px;
+    }
+
+    .services-intro p {
+      font-size: 17px;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .services-intro p strong {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    /* ── CATEGORY SECTION ── */
+    .services-section {
+      border-bottom: 1px solid var(--stroke);
+      padding: 90px 20px;
+    }
+
+    .services-section-head {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+
+    .services-section-title {
+      font-family: var(--display);
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: .95;
+    }
+
+    .services-section-lead {
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    /* card grid — mirrors the bordered grids used across the site */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid var(--stroke);
+    }
+
+    .services-grid.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-card {
+      padding: 44px 36px;
+      border-right: 1px solid var(--stroke);
+      border-bottom: 1px solid var(--stroke);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: background .2s;
+    }
+
+    .service-card:hover {
+      background: rgba(255, 255, 255, .03);
+    }
+
+    .service-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: rgba(255, 255, 255, .2);
+      margin-bottom: 6px;
+    }
+
+    .service-title {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -.4px;
+    }
+
+    .service-desc {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .service-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--stroke);
+      padding: 5px 10px;
+      border-radius: var(--radius);
+    }
+
+    /* remove trailing borders so the grid reads as one clean block */
+    .services-grid .service-card:nth-child(3n) {
+      border-right: none;
+    }
+
+    .services-grid.two .service-card:nth-child(2n) {
+      border-right: none;
+    }
+
+    /* ── HOW TO BOOK ── */
+    .book-section {
+      border-bottom: 1px solid var(--stroke);
+      padding: 100px 20px;
+    }
+
+    .book-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .book-heading {
+      font-family: var(--display);
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: .95;
+    }
+
+    .book-step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 28px;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--stroke);
+      align-items: start;
+    }
+
+    .book-step:last-child {
+      border-bottom: none;
+    }
+
+    .book-step-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, .25);
+      padding-top: 4px;
+    }
+
+    .book-step-content h3 {
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -.3px;
+      margin-bottom: 12px;
+    }
+
+    .book-step-content p {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .book-step-content p strong {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    /* ── CTA ── */
+    .services-cta {
+      padding: 120px 20px;
+      text-align: center;
+    }
+
+    .services-cta-title {
+      font-family: var(--display);
+      font-size: clamp(36px, 6vw, 80px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .services-cta-sub {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .services-cta-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+
+      .services-hero-inner,
+      .services-section-head,
+      .book-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .services-section-head {
+        align-items: start;
+      }
+
+      .services-grid,
+      .services-grid.two {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card,
+      .services-grid .service-card:nth-child(3n),
+      .services-grid.two .service-card:nth-child(2n) {
+        border-right: none;
+      }
+
+      .service-card:last-child {
+        border-bottom: none;
+      }
+
+      .services-hero-img {
+        width: 160px;
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── HERO ── -->
+  <div class="services-hero">
+    <div class="services-hero-inner">
+      <div class="services-hero-left">
+        <h1 class="services-hero-heading">what<br>we<br><em>offer.</em></h1>
+        <img class="services-hero-img" src="/assets/images/logos/superquan.png" alt="" aria-hidden="true" />
+      </div>
+      <div class="services-intro">
+        <p>
+          Octoquan isn't just a label — it's a <strong>full-service creative shop</strong>. Whether you're
+          tracking your first single or building out a full campaign, we've got the gear, the ears, and
+          the network to make it happen.
+        </p>
+        <p>
+          From the recording booth to the mastering chain, from album art to music videos, from session
+          players to promo pushes — <strong>everything a record needs, under one roof</strong>. Built by
+          artists, for artists, out of Northwest Arkansas.
+        </p>
+        <p>
+          You don't have to be on the roster to work with us. If you've got a project and a vision,
+          <em>let's build it together.</em>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MUSIC PRODUCTION ── -->
+  <div class="services-section">
+    <div class="page-inner">
+      <p class="section-label">Music Production</p>
+      <div class="services-section-head">
+        <h2 class="services-section-title">in the<br>studio.</h2>
+        <p class="services-section-lead">
+          The core of what we do. Full-chain audio production from the first take to the final master —
+          done with care, done to compete, done however weird you want it.
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <p class="service-num">01</p>
+          <h3 class="service-title">Recording</h3>
+          <p class="service-desc">
+            Clean, characterful tracking in a room built for it. Vocals, instruments, full bands —
+            we capture the take and keep the vibe.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Vocals</span>
+            <span class="service-tag">Instruments</span>
+            <span class="service-tag">Full Band</span>
+          </div>
+        </div>
+        <div class="service-card">
+          <p class="service-num">02</p>
+          <h3 class="service-title">Mixing</h3>
+          <p class="service-desc">
+            Balance, depth, and punch. We turn a pile of raw tracks into a record that translates
+            everywhere — earbuds, car speakers, club systems.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Stem Mixing</span>
+            <span class="service-tag">Revisions</span>
+          </div>
+        </div>
+        <div class="service-card">
+          <p class="service-num">03</p>
+          <h3 class="service-title">Mastering</h3>
+          <p class="service-desc">
+            The final polish. Loud, clear, and consistent across the whole project, prepped and
+            formatted for every streaming platform and pressing.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Streaming-Ready</span>
+            <span class="service-tag">Vinyl Prep</span>
+          </div>
+        </div>
+        <div class="service-card">
+          <p class="service-num">04</p>
+          <h3 class="service-title">Producing</h3>
+          <p class="service-desc">
+            Beats, arrangement, and direction from someone who actually gets your sound. We help
+            shape the song from an idea into a finished record.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Beats</span>
+            <span class="service-tag">Arrangement</span>
+            <span class="service-tag">Topline</span>
+          </div>
+        </div>
+        <div class="service-card">
+          <p class="service-num">05</p>
+          <h3 class="service-title">Sessions</h3>
+          <p class="service-desc">
+            Book studio time by the hour or the day. Bring your project, bring your people, and get
+            hands-on engineering support the whole way through.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Hourly</span>
+            <span class="service-tag">Day Rate</span>
+            <span class="service-tag">Engineer Included</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── VISUAL & ART ── -->
+  <div class="services-section">
+    <div class="page-inner">
+      <p class="section-label">Art · Video · Photo</p>
+      <div class="services-section-head">
+        <h2 class="services-section-title">the<br>visuals.</h2>
+        <p class="services-section-lead">
+          A record is more than sound. We handle the whole visual world around your release —
+          the cover, the clips, the shots that make people stop scrolling.
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <p class="service-num">01</p>
+          <h3 class="service-title">Art &amp; Design</h3>
+          <p class="service-desc">
+            Album covers, single art, logos, merch, and layouts. Original artwork that matches the
+            weirdness and energy of the music it's wrapping.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Cover Art</span>
+            <span class="service-tag">Logos</span>
+            <span class="service-tag">Merch</span>
+          </div>
+        </div>
+        <div class="service-card">
+          <p class="service-num">02</p>
+          <h3 class="service-title">Video</h3>
+          <p class="service-desc">
+            Music videos, visualizers, live sessions, and social clips. From lo-fi one-shots to
+            fully planned shoots — whatever tells the story.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Music Videos</span>
+            <span class="service-tag">Visualizers</span>
+            <span class="service-tag">Live Sessions</span>
+          </div>
+        </div>
+        <div class="service-card">
+          <p class="service-num">03</p>
+          <h3 class="service-title">Photo</h3>
+          <p class="service-desc">
+            Press shots, promo photos, live coverage, and content for your feeds. The images your
+            release needs to look like it belongs.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Press Shots</span>
+            <span class="service-tag">Live</span>
+            <span class="service-tag">Promo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PLAYERS & PROMO ── -->
+  <div class="services-section">
+    <div class="page-inner">
+      <p class="section-label">Players &amp; Reach</p>
+      <div class="services-section-head">
+        <h2 class="services-section-title">people<br>&amp; push.</h2>
+        <p class="services-section-lead">
+          The stuff that fills out the sound and gets it heard — real musicians on your track, and
+          a real plan to put it in front of people.
+        </p>
+      </div>
+      <div class="services-grid two">
+        <div class="service-card">
+          <p class="service-num">01</p>
+          <h3 class="service-title">Session Musicians</h3>
+          <p class="service-desc">
+            Need live drums, bass, guitar, keys, horns, or strings? Tap into our network of Arkansas
+            players to bring real instrumentation to your record — in the room or remote.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Drums</span>
+            <span class="service-tag">Bass</span>
+            <span class="service-tag">Guitar</span>
+            <span class="service-tag">Keys</span>
+            <span class="service-tag">Remote OK</span>
+          </div>
+        </div>
+        <div class="service-card">
+          <p class="service-num">02</p>
+          <h3 class="service-title">Promotions</h3>
+          <p class="service-desc">
+            Rollout strategy, distribution, playlist pitching, socials, and scrappy DIY promo pushed
+            hard into the world through whatever means necessary. We help your release land.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Distribution</span>
+            <span class="service-tag">Playlisting</span>
+            <span class="service-tag">Socials</span>
+            <span class="service-tag">Rollout</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── HOW TO BOOK ── -->
+  <div class="book-section">
+    <div class="book-inner">
+      <div style="display:flex; flex-direction:column; gap:28px;">
+        <h2 class="book-heading">how to<br>book.</h2>
+        <img src="/assets/images/logos/confusion.png" alt="Octoquan Records" style="width:240px; border-radius:8px;" />
+      </div>
+      <div>
+        <div class="book-step">
+          <p class="book-step-num">01</p>
+          <div class="book-step-content">
+            <h3>Tell Us the Vision</h3>
+            <p>
+              Email us with what you're making and what you need — a mix, a video, a full release,
+              or just some studio time. The more we know, the better we can help.
+            </p>
+          </div>
+        </div>
+        <div class="book-step">
+          <p class="book-step-num">02</p>
+          <div class="book-step-content">
+            <h3>We'll Scope It Out</h3>
+            <p>
+              We'll talk timeline, budget, and approach, then put together a plan that fits the
+              project. <strong>No corporate rate cards</strong> — just a real conversation.
+            </p>
+          </div>
+        </div>
+        <div class="book-step">
+          <p class="book-step-num">03</p>
+          <div class="book-step-content">
+            <h3>Let's Make It</h3>
+            <p>
+              Book the sessions, get to work, and get it out into the world. And remember —
+              <strong>you own your masters.</strong> Always. Service work is no exception.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CTA ── -->
+  <div class="services-cta">
+    <h2 class="services-cta-title">let's<br>build it.</h2>
+    <p class="services-cta-sub">
+      Got a project in mind? Recording, mixing, mastering, visuals, or a full campaign —
+      drop us a line and let's talk it through.
+    </p>
+    <div class="services-cta-btns">
+      <a class="btn-primary" href="mailto:william@octoquan.com?subject=Services%20Inquiry">Book a Session</a>
+      <a class="btn-secondary" href="/about">Meet the Label</a>
+    </div>
+  </div>
+
+  <script src="/js/octoquan-db.js"></script>
+  <script src="/js/octoquan-ui.js"></script>
+  <script>
+    OctoquanUI.injectShell('services');
+  </script>
+
+</body>
+
+</html>

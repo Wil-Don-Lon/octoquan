@@ -39,7 +39,8 @@ const OctoquanUI = (() => {
       { slug: 'shows',    label: 'Shows' },
       //{ slug: 'store',    label: 'Store' },
       { slug: 'about',    label: 'About' },
-      { slug: 'demos', label: 'Demo Submissions', href: 'https://forms.gle/iCZnsLzhUg596hiT8' }, 
+      { slug: 'services', label: 'Services' },
+      { slug: 'demos', label: 'Demo Submissions', href: 'https://forms.gle/iCZnsLzhUg596hiT8' },
     ];
     return `
       <header>
