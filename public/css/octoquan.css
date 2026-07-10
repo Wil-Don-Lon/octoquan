@@ -69,6 +69,19 @@ section { padding: 100px 20px; position: relative; z-index: 1; }
 .hero-sub { max-width: 520px; font-size: 16px; line-height: 1.75; color: var(--muted); margin-bottom: 44px; opacity: 0; animation: fadeUp .9s ease forwards .4s; }
 .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; opacity: 0; animation: fadeUp .9s ease forwards .55s; }
 
+/* Hero variant: copy on the left, featured release on the right */
+.hero--featured { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+.hero--featured .hero-copy { display: flex; flex-direction: column; align-items: flex-start; }
+.hero--featured .hero-title { font-size: clamp(44px, 7.5vw, 104px); margin-bottom: 28px; }
+.hero-featured-wrap { width: 100%; opacity: 0; animation: fadeUp .9s ease forwards .5s; }
+.hero-featured-wrap .section-label { margin-bottom: 20px; }
+.hero-featured-wrap .release-card { grid-template-columns: 1fr; gap: 20px; }
+.hero-featured-wrap .release-title { font-size: clamp(26px, 2.6vw, 40px); }
+.hero-featured-wrap .release-desc { max-width: none; }
+@media (max-width: 900px) {
+  .hero--featured { grid-template-columns: 1fr; gap: 40px; align-items: start; }
+}
+
 /* Noise overlay */
 .hero::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E"); opacity: .025; pointer-events: none; z-index: 2; }
 
