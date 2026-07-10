@@ -129,7 +129,9 @@
       const countdown = OctoquanUI.countdownTimer(r);
       el.innerHTML = `
         <div class="release-art">
-          <img src="${r.art}" alt="${r.title} album art" />
+          <a href="/artists/${artist.slug}/${r.slug}" aria-label="View ${r.title}">
+            <img src="${r.art}" alt="${r.title} album art" />
+          </a>
         </div>
         <div class="release-info">
           <p class="release-artist">${artist.name}</p>
